@@ -1,0 +1,33 @@
+# Virtual Environment & Python Caches
+.venv/
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Environment Variables & Local Config
+.env
+.env.*
+.selected_reports.json
+.claude/
+
+# Browser & Runtime Cache
+.chrome_profile/
+*.dat
+
+# Output & Generated Artifacts
+exported_reports/*.xlsx
+!exported_reports/.gitkeep
+defects/*.png
+!defects/error.png
+cdp_test*.png
+
+# Packaging & Build Outputs
+build/
+dist/
+*.spec
+*.exe
+*.zip
