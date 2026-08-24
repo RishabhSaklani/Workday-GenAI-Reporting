@@ -6,30 +6,9 @@ An intelligent, multi-agent automation platform for discovering, migrating, and 
 
 ## Architecture Flow
 
-```mermaid
-flowchart TD
-    START["🚀 Reporting Orchestrator<br/>(orchestrator.py)"] --> MENU{"Startup Menu"}
-
-    MENU -->|"1 — Full Workflow"| DISC["Report Discovery Agent<br/>(Web UI on port 8100)"]
-    MENU -->|"2 — Report Migration only"| MIG_ONLY["Report Migration Agent"]
-    MENU -->|"3 — Dashboard Migration only"| DASH_ONLY["Dashboard Migration Agent"]
-    MENU -->|"4 — Export only"| EXP_ONLY["Report Export Agent"]
-
-    DISC -->|"User searches & selects reports"| SELECTED["Selected Reports list"]
-    SELECTED --> TOGGLE{"Run Export<br/>in parallel?"}
-    TOGGLE -->|Yes| PARALLEL["asyncio.gather"]
-    TOGGLE -->|No| MIG["Report Migration Agent<br/>(Browser Automation)"]
-
-    PARALLEL --> MIG2["Report Migration Agent"]
-    PARALLEL --> EXP["Report Export Agent"]
-
-    MIG_ONLY -->|"Creates Config Package"| CC1[("Customer Central<br/>.dat Extract")]
-    MIG -->|"Creates Config Package"| CC2[("Customer Central<br/>.dat Extract")]
-    MIG2 -->|"Creates Config Package"| CC3[("Customer Central<br/>.dat Extract")]
-    DASH_ONLY -->|"Creates Dashboard<br/>Config Package"| CC4[("Customer Central<br/>.dat Extract")]
-    EXP -->|"Downloads Report Definitions"| EXCEL[("Excel .xlsx Files")]
-    EXP_ONLY -->|"Downloads Report Definitions"| EXCEL2[("Excel .xlsx Files")]
-```
+<p align="center">
+  <img src="docs/Architecture Diagram.png" alt="Workday Reporting Orchestration Agent – Architecture Flow" width="700"/>
+</p>
 
 ---
 
