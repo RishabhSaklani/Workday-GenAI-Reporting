@@ -326,7 +326,7 @@ After selecting a workflow, you will see a form where you provide the remaining 
 
 ### 5.5 Agent Progress Screen
 
-![Agent Progress Screen](docs/user_guide_images/07_agent-progress.png)
+![Agent Progress Screen](docs/user_guide_images/08_agent-progress.png)
 
 After you click **"Launch Agent"**, the application begins automating your workflow. This screen shows you real-time progress.
 
@@ -360,7 +360,7 @@ After you click **"Launch Agent"**, the application begins automating your workf
 
 ### 5.6 Results Screen
 
-![Results Screen](docs/user_guide_images/08_agent-progress.png)
+![Results Screen](docs/user_guide_images/09_results_screen.png)
 
 When all agents have finished, the results screen appears automatically.
 
