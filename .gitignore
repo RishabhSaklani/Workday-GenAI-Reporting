@@ -27,7 +27,9 @@ cdp_test*.png
 
 # Packaging & Build Outputs
 build/
-dist/
+dist/*
+!dist/.env.example
+!dist/Reporting_Orchestrator.zip
 *.spec
 *.exe
-*.zip
+
