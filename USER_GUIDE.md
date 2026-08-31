@@ -59,18 +59,21 @@ It can:
 
 ## 2. Installation
 
-### Step 1: Locate the Application Package
+### Step 1: Locate and Download the Application Package
 
-You will receive either:
-- A **ZIP file** named something like `Reporting_Orchestrator-V.X.X.zip`, or
-- File Location - dist/Reporting_Orchestrator.zip
-- A **folder** containing the application files.
+1. In the GitHub repository, navigate to the **`dist/`** folder and click on **`Reporting_Orchestrator.zip`**.
+2. Click on the **"View raw"** link in the center of the page. This will automatically start downloading the `Reporting_Orchestrator.zip` file to your computer.
+
+![Downloading the application package from GitHub by clicking "View raw"](docs/user_guide_images/download_zip_github.png)
+
+> [!TIP]
+> Alternatively, if you already received the ZIP file directly (e.g. from your team lead), locate it in your computer's `Downloads` folder.
 
 ### Step 2: Extract the Files (If ZIP)
 
-1. Right-click on the ZIP file.
+1. Right-click on the downloaded `Reporting_Orchestrator.zip` file.
 2. Select **"Extract All…"**
-3. Choose a location on your computer (e.g., your Desktop or Documents folder).
+3. Choose a folder location on your computer (e.g., your Desktop or Documents folder).
 4. Click **"Extract"**.
 
 > [!CAUTION]
@@ -78,32 +81,36 @@ You will receive either:
 
 ### Step 3: Verify Required Files
 
-Open the extracted folder. You should see the following important files:
+Open the extracted folder. You should see the main executable:
 
 | File | Purpose |
 |---|---|
 | `Reporting_Orchestrator.exe` | The main application (double-click to run) |
-| `.env` | Configuration file (you will edit this in the next section) |
-
-> [!NOTE]
-> If you do not see the `.env` file, it may be hidden. In File Explorer, click **View** in the top menu bar, then check the box labeled **"Hidden items"**.
-
-If you see both files, you are ready to proceed to configuration.
+| `.env` | Configuration file (see Section 3 below on how to download and configure it) |
 
 ---
 
 ## 3. Configuration
 
-Before launching the application for the first time, you need to set up a small configuration file called `.env`. This file tells the application how to connect to the AI search service and (optionally) your Workday credentials.
+Before launching the application for the first time, you need to set up a configuration file named `.env`. This file tells the application how to connect to the AI search service and contains your configuration settings.
 
-### Step 1: Open the Configuration File
+### Step 1: Obtain and Open the Configuration File
 
-1. Navigate to the folder where you extracted the application.
-2. Find the file named **`.env`** (it may appear as just `env` without an extension).
-3. **Right-click** on the file → select **"Open with"** → choose **Notepad** (or any text editor).
+#### Option A: Download the Template from GitHub
+1. In the repository, open the **`dist/`** folder and click on **`.env.example`**.
+2. Click the **"Download raw file"** button (download icon) in the top-right corner.
+
+![Downloading the .env.example template from GitHub](docs/user_guide_images/download_env_github.png)
+
+3. Move the downloaded `.env.example` file into the **same folder** where you extracted `Reporting_Orchestrator.exe`.
+4. **Rename the file** from `.env.example` to **`.env`** (remove the `.example` extension).
+
+#### Option B: If `.env` is Already in Your Folder
+1. Find the file named **`.env`** in your application folder (it may appear as just `env`).
+2. **Right-click** on the file → select **"Open with"** → choose **Notepad** (or any text editor).
 
 > [!WARNING]
-> Do **not** open this file in Microsoft Word or similar programs. Use only **Notepad**, **Notepad++**, or **VS Code**.
+> Do **not** open this file in Microsoft Word or similar rich text editors. Use only **Notepad**, **Notepad++**, or **VS Code**.
 
 ### Step 2: Understanding Each Field
 
