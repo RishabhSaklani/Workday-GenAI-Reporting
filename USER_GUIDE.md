@@ -63,6 +63,7 @@ It can:
 
 You will receive either:
 - A **ZIP file** named something like `Reporting_Orchestrator-V.X.X.zip`, or
+- File Location - dist/Reporting_Orchestrator.zip
 - A **folder** containing the application files.
 
 ### Step 2: Extract the Files (If ZIP)
