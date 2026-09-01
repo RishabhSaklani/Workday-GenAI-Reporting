@@ -33,3 +33,6 @@ dist/*
 *.spec
 *.exe
 
+# Data & Report Catalogs
+Workday_Report_Discovery_Agent/data/*.json
+Workday_Report_Discovery_Agent/data/All_Custom_Reports_Enabled_as_RAAS.json
