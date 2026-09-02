@@ -1,7 +1,7 @@
 # 📘 Workday Reporting Orchestration Agent — User Guide
 
 > **Version:** 1.0  
-> **Last Updated:** August 2026  
+> **Last Updated:** 31st August 2026  
 > **Audience:** End users — no technical or programming knowledge required.
 
 ---
