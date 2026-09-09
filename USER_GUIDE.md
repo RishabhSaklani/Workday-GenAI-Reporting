@@ -61,7 +61,7 @@ It can:
 
 ### Step 1: Locate and Download the Application Package
 
-1. In the GitHub repository, navigate to the **`dist/`** folder and click on **`Reporting_Orchestrator.zip`**.
+1. In the GitHub repository, navigate to the **`dist/`** folder **in the left-hand side panel** and click on **`Reporting_Orchestrator.zip`**.
 2. Click on the **"View raw"** link in the center of the page. This will automatically start downloading the `Reporting_Orchestrator.zip` file to your computer.
 
 ![Downloading the application package from GitHub by clicking "View raw"](docs/user_guide_images/download_zip_github.png)
@@ -86,7 +86,21 @@ Open the extracted folder. You should see the main executable:
 | File | Purpose |
 |---|---|
 | `Reporting_Orchestrator.exe` | The main application (double-click to run) |
-| `.env` | Configuration file (see Section 3 below on how to download and configure it) |
+
+> [!IMPORTANT]
+> The ZIP file only contains the `.exe` file. You will also need a **`.env`** configuration file. See [Section 3: Configuration](#3-configuration) below for instructions on how to download and set it up. The `.env` file must be placed in the **same folder** as the `.exe` before launching the application.
+
+### Step 4: Bypass Windows SmartScreen (First-Time Only)
+
+Because the `.exe` is downloaded from the internet, Windows may show a **"Windows protected your PC"** SmartScreen warning when you first try to run it.
+
+**To bypass this:**
+1. Click **"More info"** (the blue link in the warning dialog).
+2. A **"Run anyway"** button will appear at the bottom.
+3. Click **"Run anyway"** — the application will start normally.
+
+> [!TIP]
+> **Alternative method:** Before running the `.exe`, right-click on it → select **Properties** → at the bottom, check the **"Unblock"** checkbox → click **Apply** → **OK**. This permanently removes the warning.
 
 ---
 
@@ -94,10 +108,9 @@ Open the extracted folder. You should see the main executable:
 
 Before launching the application for the first time, you need to set up a configuration file named `.env`. This file tells the application how to connect to the AI search service and contains your configuration settings.
 
-### Step 1: Obtain and Open the Configuration File
+### Step 1: Download and Set Up the Configuration File
 
-#### Option A: Download the Template from GitHub
-1. In the repository, open the **`dist/`** folder and click on **`.env.example`**.
+1. In the GitHub repository, open the **`dist/`** folder **in the left-hand side panel** and click on **`.env.example`**.
 2. Click the **"Download raw file"** button (download icon) in the top-right corner.
 
 ![Downloading the .env.example template from GitHub](docs/user_guide_images/download_env_github.png)
@@ -105,14 +118,21 @@ Before launching the application for the first time, you need to set up a config
 3. Move the downloaded `.env.example` file into the **same folder** where you extracted `Reporting_Orchestrator.exe`.
 4. **Rename the file** from `.env.example` to **`.env`** (remove the `.example` extension).
 
-#### Option B: If `.env` is Already in Your Folder
-1. Find the file named **`.env`** in your application folder (it may appear as just `env`).
-2. **Right-click** on the file → select **"Open with"** → choose **Notepad** (or any text editor).
+> [!NOTE]
+> When you rename the file, Windows may show a warning that says *"If you change a file name extension, the file might become unusable."* This is expected — simply click **"Yes"** to confirm the rename. The file will work correctly.
+
+5. **Right-click** on the renamed `.env` file → select **"Open with"** → choose **Notepad** (or any text editor).
 
 > [!WARNING]
 > Do **not** open this file in Microsoft Word or similar rich text editors. Use only **Notepad**, **Notepad++**, or **VS Code**.
 
 ### Step 2: Understanding Each Field
+
+> [!IMPORTANT]
+> **Prerequisites for Live Workday Data Access:**
+> - To access live Workday report data, a **Custom Report** must be set up in your Workday tenant and **enabled as a RaaS (Report as a Service)** web service.
+> - An **ISU (Integration System User)** must be created in Workday with the appropriate permissions to fetch report data for the agent.
+> - Contact your Workday administrator to set up both the Custom Report (RaaS) and the ISU before configuring the fields below.
 
 When you open the file, you will see content similar to this:
 
@@ -139,9 +159,9 @@ Here is what each field means:
 | `MODEL_NAME` | Which AI model to use for searching | Keep the default value unless instructed otherwise | ✅ Yes |
 | `BM25_TOP_N` | How many initial search results to consider | Keep as `30` (default) | No |
 | `LLM_TOP_K` | How many final results to show | Keep as `5` (default) | No |
-| `WORKDAY_RAAS_URL` | Your Workday report catalog address | Provided by your Workday admin (leave blank if unsure) | No |
-| `WORKDAY_ISU_USERNAME` | Service account username for catalog sync | Provided by your Workday admin | No |
-| `WORKDAY_ISU_PASSWORD` | Service account password for catalog sync | Provided by your Workday admin | No |
+| `WORKDAY_RAAS_URL` | The RaaS endpoint URL for your Workday custom report catalog | Provided by your Workday admin — this is the URL of the Custom Report enabled as RaaS (leave blank if unsure) | No — but needed for live catalog sync |
+| `WORKDAY_ISU_USERNAME` | The ISU (Integration System User) username for catalog sync | Provided by your Workday admin — this is the service account created to access the RaaS endpoint | No — but needed for live catalog sync |
+| `WORKDAY_ISU_PASSWORD` | The ISU password for catalog sync | Provided by your Workday admin | No — but needed for live catalog sync |
 
 ### Step 3: Enter Your Values
 
