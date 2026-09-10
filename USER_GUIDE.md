@@ -92,15 +92,24 @@ Open the extracted folder. You should see the main executable:
 
 ### Step 4: Bypass Windows SmartScreen (First-Time Only)
 
-Because the `.exe` is downloaded from the internet, Windows may show a **"Windows protected your PC"** SmartScreen warning when you first try to run it.
+Because the `.exe` is downloaded from the internet, Windows may block it with a **"Windows protected your PC"** SmartScreen warning. You need to **unblock** the file before running it.
 
-**To bypass this:**
-1. Click **"More info"** (the blue link in the warning dialog).
-2. A **"Run anyway"** button will appear at the bottom.
-3. Click **"Run anyway"** — the application will start normally.
+**To unblock the file:**
+
+1. **Right-click** on `Reporting_Orchestrator.exe` and select **"Properties"**.
+
+![Right-click on the exe and select Properties](docs/user_guide_images/10_right_click_properties.png)
+
+2. In the Properties window, look at the bottom of the **General** tab. You will see a **Security** section that says *"This file came from another computer and might be blocked to help protect this computer."*
+3. Check the **"Unblock"** checkbox.
+4. Click **"Apply"**, then click **"OK"**.
+
+![Check the Unblock checkbox at the bottom of Properties](docs/user_guide_images/11_unblock_checkbox.png)
+
+5. Now **double-click** the `.exe` to run it — it will start without any warnings.
 
 > [!TIP]
-> **Alternative method:** Before running the `.exe`, right-click on it → select **Properties** → at the bottom, check the **"Unblock"** checkbox → click **Apply** → **OK**. This permanently removes the warning.
+> **If you skipped the step above** and see the SmartScreen warning, click **"More info"** (the blue link in the dialog), then click the **"Run anyway"** button that appears.
 
 ---
 
